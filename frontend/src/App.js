@@ -2,14 +2,12 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import NavbarCustom from './components/NavbarCustom';
-import Notaires from './pages/Notaires';
+import NavbarComp from './components/NavbarComp';
 
 function App() {
   return (
     <div className="App">
-      <NavbarCustom></NavbarCustom>
-      <Notaires></Notaires>
+      <NavbarComp />
     </div>
   );
 }
