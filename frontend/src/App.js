@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonAppBar from './components/ButtonAppBar';
-import Notaires from './components/Notaires';
+import Notaires from './pages/Notaires';
 
 
 function App() {

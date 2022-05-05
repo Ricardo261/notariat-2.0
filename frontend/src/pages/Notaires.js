@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 const axios = require('axios').default;
 
-export default class OutlinedCard extends React.Component {
+export default class Notaires extends React.Component {
     state = {
         persons: []
     }
