@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import {
     BrowserRouter as Router,
-    Switch,
+    Routes,
     Route,
     Link
 } from "react-router-dom";
@@ -29,14 +29,10 @@ export default class NavbarComp extends Component {
                     </Navbar>
                 </div>
                 <div>
-                    <Switch>
-                        <Route path="/annuaire">
-                            <Annuaire />
-                        </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
-                    </Switch>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/annuaire" element={<Annuaire />} />
+                    </Routes>
                 </div>
             </Router>
         )
