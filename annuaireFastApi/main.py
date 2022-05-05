@@ -9,7 +9,17 @@ async def root():
 
 
 @app.get("/annuaire/notaires")
-async def getNotaires():
+async def getNoateurs():
+    return getNotaires()
+
+
+@app.get("/annuaire/notaires/{prenom}")
+async def getNotaire(prenom: str):
+    nom = getNotaires().get(prenom.title())
+    return (prenom.title() + " " + nom) if nom != None else "Notaire inconnu"
+
+
+def getNotaires():
     return {
         "Michel": "Page",
         "Albertine": "Dupont",
