@@ -1,8 +1,20 @@
 # notariat-2.0
+**Projet d'architecture microservices**  
+
+Le directory frontend contient l'application React qui est le point d'accès pour l'utilisateur
+
+Le directory annuaireFastApi contient le microservice annuaire contenant les données sur les notaires
+
+----
 
 Pour lancer le micro service annuaireFastApi, utiliser les commandes ci-dessous : 
   -   pip install -r requirements.txt
   -   python -m uvicorn main:app --reload
 
-Pour lancer l'application fronted, utiliser la commande ci-dessous : 
+Pour lancer l'application frontend, utiliser la commande ci-dessous : 
   -  npm run start
+
+Parfois le projet frontend peut nécessiter un nettoyage profond : 
+  - npm cache clean --force
+  - npm install
+  - npm start
