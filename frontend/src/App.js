@@ -1,15 +1,14 @@
 import React from 'react';
-import AppBar from './components/AppBar';
-import { Grommet, Header } from 'grommet';
+import ButtonAppBar from './components/ButtonAppBar';
 
 
 function App() {
   return (
-    <Grommet>
+    <div className='App'>
       
-        <AppBar />
+        <ButtonAppBar></ButtonAppBar>
     
-    </Grommet>
+    </div>
   );
 }
 
