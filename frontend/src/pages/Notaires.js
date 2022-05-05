@@ -1,29 +1,29 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React from 'react';
+import axios from 'axios';
 
-const axios = require('axios').default;
-const state = {
-  persons : []  
-}
+const api = axios.create({
+  baseURL: 'http://127.0.0.1:8000/annuaire/notaires'
+})
+
+
 export default class Notaires extends React.Component {
 
+  state = {
+    notaires: []
+  }
 
-    componentDidMount() {
-        axios.get('http://127.0.0.1:8000/annuaire/notaires')
-        .then(res => {
-            state.persons = res.data;
-          })
-    }
+  constructor() {
+    super();
+    api.get('/').then(res => {
+      console.log(res.data)
+      this.setState({ notaires: res.data })
+    })
+  }
   
-    render() {
-        return (
+  render() {
+    return (
           <ul>
-            { state.persons.map(person => <li>{person.notaires}</li>)}
+            { this.state.notaires.map(notaire => <li>{notaire.nom}</li>)}
           </ul>
         )
     }
