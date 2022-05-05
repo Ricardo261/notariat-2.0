@@ -34,10 +34,10 @@ async def getNotaire(prenom: str):
 
 
 def getNotaires():
-    return {
-        "Michel": "Page",
-        "Albertine": "Dupont",
-        "Ginette": "Petitpierre",
-        "Albert": "Lao",
-        "Marc": "Lilo"
+    return { "notaires" : 
+            [
+                { "nom" : "Page", "prenom" : "Michel"},
+                { "nom" : "Dupond", "prenom" : "Michel"},
+                { "nom" : "Frote", "prenom" : "Michel"}
+            ]
     }

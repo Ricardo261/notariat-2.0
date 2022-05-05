@@ -7,32 +7,23 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 const axios = require('axios').default;
-
+const state = {
+  persons : []  
+}
 export default class Notaires extends React.Component {
-    state = {
-        persons: []
-    }
+
 
     componentDidMount() {
         axios.get('http://127.0.0.1:8000/annuaire/notaires')
-        .then(function (response) {
-          // handle success
-          console.log(response);
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
         .then(res => {
-            const persons = res.data;
-            this.setState({ persons });
+            state.persons = res.data;
           })
     }
   
     render() {
         return (
           <ul>
-            { this.state.persons.map(person => <li>{person.name}</li>)}
+            { state.persons.map(person => <li>{person.notaires}</li>)}
           </ul>
         )
     }
