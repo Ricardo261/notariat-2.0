@@ -37,15 +37,33 @@ async def getNotaire(prenom: str):
 def getNotaires():
     return  [
                 { 
-                    "nom" : "Page", 
-                    "prenom" : "Michel"
+                    "nom" : "AUGSBURGER", 
+                    "prenom" : "Isabelle",
+                    "adresse" : "Rue du Musée 6",
+                    "localite" : "2000 Neuchâtel"
                 },
                 {
-                    "nom" : "Dupond",
-                    "prenom" : "Michel"
+                    "nom" : "BLANDENIER",
+                    "prenom" : "Christian",
+                    "adresse" : "Impasse du Noyer 1",
+                    "localite" : "2053 Cernier"
                 },
                 {
-                    "nom" : "Frote",
-                    "prenom" : "Michel"
+                    "nom" : "FELD",
+                    "prenom" : "Laurent",
+                    "adresse" : "Place de la Fontaine 4",
+                    "localite" : "2034 Peseux"
+                },
+                {
+                    "nom" : "GUILLEN",
+                    "prenom" : "Lila",
+                    "adresse" : "Rue Denis-de-Rougemont 3",
+                    "localite" : "2108 Couvet"
+                },
+                {
+                    "nom" : "OBRIST",
+                    "prenom" : "Laurent",
+                    "adresse" : "Rue de l'Hôpital 11",
+                    "localite" : "2001 Neuchâtel"
                 }
             ]
