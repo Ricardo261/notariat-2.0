@@ -20,5 +20,15 @@ Parfois le projet frontend peut nécessiter un nettoyage profond :
   - npm start
 
 Pour lancer l'image docker avec uniquement l'application frontend (port 3000): 
+<<<<<<< HEAD
   - docker-compose -f docker-compose-local.yml build
   - docker-compose -f docker-compose-local.yml up
+=======
+  - docker-compose -f docker-compose-local.yml up -d
+
+Pour lancer le service d'authentification
+   - node index.js
+En mode développement, avec nodemon
+   - nodemon
+
+>>>>>>> leonard
