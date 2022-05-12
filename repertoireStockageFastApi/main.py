@@ -20,7 +20,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to repertoireStockageFastApi"}
+    return {"message": "Welcome to the microservice repertoireStockageFastApi"}
 
 # Get by id
 @app.get("/repertoire/{id}")
