@@ -21,3 +21,14 @@ services:
         volumes: 
             - ./frontend:/frontend
         command: npm start
+        
+    authentification:
+        build:
+            context: ./authentification
+            dockerfile: Dockerfile
+        container_name: node-docker
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./node-docker/authentification
+        command: node index.js
