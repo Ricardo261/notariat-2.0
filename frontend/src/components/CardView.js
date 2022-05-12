@@ -9,6 +9,9 @@ const CardView = ({ notaire }) => {
         <Card.Subtitle className="mb-2 text-muted">
           {notaire.prenom}
         </Card.Subtitle>
+        <Card.Text>
+          {notaire.adresse} <br /> {notaire.localite}
+        </Card.Text>
       </Card.Body>
     </Card>
   );
