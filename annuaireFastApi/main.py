@@ -1,5 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+import requests
+import json
+import logging
+
 
 app = FastAPI()
 
@@ -18,6 +23,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+class User(BaseModel):
+    login: str
+    password: str
+
 
 @app.get("/")
 async def root():
@@ -34,6 +43,35 @@ async def getNotaire(prenom: str):
     nom = getNotaires().get(prenom.title())
     return (prenom.title() + " " + nom) if nom != None else "Notaire inconnu"
 
+@app.post("/api/login")
+async def login(user: User):
+    logging.info(user)
+    url = "http://localhost:8080/api/login"
+
+    payload = json.dumps({
+        "login": user.login,
+        "password": user.password
+    })
+    headers = {
+        'Content-Type': 'application/json'
+    }
+
+    return requests.request("POST", url, headers=headers, data=payload).json()
+
+@app.post("/api/signup")
+async def login(user: User):
+    logging.info(user)
+    url = "http://localhost:8080/api/signup"
+
+    payload = json.dumps({
+        "login": user.login,
+        "password": user.password
+    })
+    headers = {
+        'Content-Type': 'application/json'
+    }
+
+    return requests.request("POST", url, headers=headers, data=payload).json()
 
 def getNotaires():
     return  [
