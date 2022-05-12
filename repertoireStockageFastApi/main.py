@@ -1,7 +1,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from typing import List, Optional
+from pydantic import BaseModel
 
 app = FastAPI()
+
+class Repertoire(BaseModel):
+    noOrdre: str
+    dateActe: str 
+    minutaireNo: Optional[str] = None
+    minuteNo: Optional[str] = None
+    natureActe: List[str]
+    signatures: List[str]
 
 origins = [
     "http://localhost:3000",
@@ -17,6 +27,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+"""
+GET REQUESTS
+"""
 
 @app.get("/")
 async def root():
@@ -39,3 +53,17 @@ async def getNumOrdre(id: int, numOrdre: int):
 @app.get("/repertoire/{id}/{numOrdre}/signatures")
 async def getSignatures(id: int, numOrdre: int):
     return "Signatures pour le " + getRepertoireById(id) + ", numéro d'ordre " + str(numOrdre)
+
+"""
+POST REQUESTS
+"""
+
+# Post to a repertoire
+@app.post("/repertoire/{id}")
+async def postRepertoire(repertoire : Repertoire):
+    repertoire_dict = repertoire.dict()
+    nbVersions = repertoire.natureActe.__len__()
+    for i in range(nbVersions):
+        repertoire_dict["natureActe"][i] = repertoire.natureActe[i]
+
+
