@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Welcome to annuaireFastApi"}
 
 
 @app.get("/annuaire/notaires")
