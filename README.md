@@ -31,4 +31,3 @@ Pour lancer le service d'authentification
 En mode développement, avec nodemon
    - nodemon
 
->>>>>>> leonard
