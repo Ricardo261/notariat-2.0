@@ -26,6 +26,10 @@ Pour lancer le service d'authentification
 En mode développement, avec nodemon
    - nodemon
 
+Pour builder et lancer un container
+   - docker build --tag node-docker .
+   - docker run --publish 8080:8080 node-docker
+
 ----  
 Pour lancer l'image docker avec uniquement l'application frontend (port 3000): 
   - docker-compose -f docker-compose-local.yml build
