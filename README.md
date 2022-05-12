@@ -21,4 +21,4 @@ Parfois le projet frontend peut nécessiter un nettoyage profond :
 
 Pour lancer l'image docker avec uniquement l'application frontend (port 3000): 
   - docker-compose -f docker-compose-local.yml build
-  - docker-compose -f docker-compose-local.yml up -d
+  - docker-compose -f docker-compose-local.yml up
