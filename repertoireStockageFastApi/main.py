@@ -22,10 +22,20 @@ app.add_middleware(
 async def root():
     return {"message": "Welcome to the microservice repertoireStockageFastApi"}
 
-# Get by id
+# Get repertoire by id
 @app.get("/repertoire/{id}")
 async def getById(id: int):
     return getRepertoireById(id)
 
 def getRepertoireById(id): 
-    return "Rendu visuel du répertoire identifié par l'id : " + str(id)
+    return "Répertoire identifié par l'id : " + str(id)
+
+# Get content by repertoire id and num ordre 
+@app.get("/repertoire/{id}/{numOrdre}")
+async def getNumOrdre(id: int, numOrdre: int):
+    return getRepertoireById(id) + ", rendu du numéro d'ordre " + str(numOrdre)
+
+# Get signatures by repertoire id and num ordre 
+@app.get("/repertoire/{id}/{numOrdre}/signatures")
+async def getSignatures(id: int, numOrdre: int):
+    return "Signatures pour le " + getRepertoireById(id) + ", numéro d'ordre " + str(numOrdre)
