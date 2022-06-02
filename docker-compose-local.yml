@@ -29,6 +29,14 @@ services:
         container_name: node-docker
         ports:
             - "8080:8080"
-        volumes:
-            - ./node-docker/authentification
         command: node index.js
+
+    appsmith:
+        image: index.docker.io/appsmith/appsmith-ce
+        container_name: appsmith
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./stacks:/appsmith-stacks
+        restart: unless-stopped   
