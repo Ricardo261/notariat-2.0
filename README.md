@@ -32,5 +32,5 @@ Pour builder et lancer un container
 
 ----  
 Pour lancer l'image docker avec uniquement l'application frontend (port 3000): 
-  - docker-compose -f docker-compose-local.yml build
-  - docker-compose -f docker-compose-local.yml up
+  - docker-compose build
+  - docker-compose up
